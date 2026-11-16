@@ -1,0 +1,46 @@
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+body { background: #f4f5f7; color: #1f2937; }
+.hidden { display: none !important; }
+
+.verify-banner {
+    background: #fef3c7; color: #92400e; text-align: center;
+    padding: 10px; font-size: 14px; border-bottom: 1px solid #f59e0b;
+}
+
+.navbar {
+    background: #ffffff; padding: 14px 24px; display: flex;
+    justify-content: space-between; align-items: center;
+    border-bottom: 1px solid #e5e7eb; position: sticky; top: 0; z-index: 10;
+}
+.logo { font-weight: 700; font-size: 20px; color: #111827; }
+
+.badge-developer {
+    background: linear-gradient(135deg, #f59e0b, #ea580c);
+    color: #ffffff; font-size: 11px; font-weight: 700;
+    padding: 2px 7px; border-radius: 4px; margin-left: 6px;
+    text-transform: uppercase; letter-spacing: 0.5px; vertical-align: middle;
+}
+
+.container { max-width: 640px; margin: 24px auto; padding: 0 16px; }
+.card { background: #ffffff; border-radius: 10px; padding: 16px; margin-bottom: 20px; border: 1px solid #e5e7eb; }
+
+input, textarea { width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #d1d5db; border-radius: 6px; font-size: 14px; }
+.btn-primary { background: #2563eb; color: white; border: none; padding: 9px 16px; border-radius: 6px; cursor: pointer; font-weight: 600; }
+.btn-primary:hover { background: #1d4ed8; }
+.btn-outline { background: transparent; border: 1px solid #d1d5db; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 13px; }
+.btn-outline:hover { background: #f3f4f6; }
+
+.post-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.media-wrapper img, .media-wrapper video { width: 100%; max-height: 480px; object-fit: contain; background: #000; border-radius: 8px; }
+.post-desc { margin: 10px 0; font-size: 14px; line-height: 1.5; }
+.post-actions { display: flex; gap: 8px; flex-wrap: wrap; padding-top: 10px; border-top: 1px solid #f3f4f6; }
+
+.comments-box { margin-top: 12px; background: #f9fafb; padding: 10px; border-radius: 6px; }
+.comment-item { font-size: 13px; margin-bottom: 6px; }
+.comment-form { display: flex; gap: 6px; margin-top: 8px; }
+.comment-form input { margin: 0; padding: 6px 10px; }
+
+.modal { position: fixed; inset: 0; background: rgba(0,0,0,0.5); display: flex; justify-content: center; align-items: center; z-index: 50; }
+.modal-content { background: white; padding: 24px; border-radius: 10px; width: 90%; max-width: 380px; position: relative; }
+.close { position: absolute; right: 16px; top: 12px; font-size: 22px; cursor: pointer; }
+.switch-auth { margin-top: 12px; font-size: 13px; text-align: center; }

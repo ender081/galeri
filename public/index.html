@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri Media</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">GaleriKita</div>
+        <div id="nav-actions">
+            <button onclick="openModal('auth-modal')" class="btn-primary">Masuk / Daftar</button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="upload-section" class="card hidden">
+            <h3>Unggah Foto atau Video</h3>
+            <form id="upload-form">
+                <input type="file" id="media-input" accept="image/*,video/*" required>
+                <textarea id="desc-input" placeholder="Tulis deskripsi unggahan..." rows="2"></textarea>
+                <button type="submit" id="upload-btn" class="btn-primary">Unggah Sekarang</button>
+            </form>
+        </section>
+
+        <section id="feed" class="feed"></section>
+    </main>
+
+    <div id="auth-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('auth-modal')">&times;</span>
+            <h3 id="auth-title">Daftar Akun Baru</h3>
+            <form id="auth-form">
+                <!-- Input Email dihapus sepenuhnya, hanya sisa Username & Password -->
+                <input type="text" id="username-input" placeholder="Username" required>
+                <input type="password" id="password-input" placeholder="Password" required>
+                <button type="submit" class="btn-primary" id="auth-submit-btn">Daftar & Masuk</button>
+            </form>
+            <p class="switch-auth">
+                <span id="switch-text">Sudah punya akun?</span>
+                <a href="#" onclick="toggleAuthMode()">Login di sini</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
