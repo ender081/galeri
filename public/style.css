@@ -1,399 +1,46 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+body { background: #f4f5f7; color: #1f2937; }
+.hidden { display: none !important; }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+.verify-banner {
+    background: #fef3c7; color: #92400e; text-align: center;
+    padding: 10px; font-size: 14px; border-bottom: 1px solid #f59e0b;
 }
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
-    background-color: #fafafa;
-    color: #262626;
-    line-height: 1.45;
+.navbar {
+    background: #ffffff; padding: 14px 24px; display: flex;
+    justify-content: space-between; align-items: center;
+    border-bottom: 1px solid #e5e7eb; position: sticky; top: 0; z-index: 10;
+}
+.logo { font-weight: 700; font-size: 20px; color: #111827; }
+
+.badge-developer {
+    background: linear-gradient(135deg, #f59e0b, #ea580c);
+    color: #ffffff; font-size: 11px; font-weight: 700;
+    padding: 2px 7px; border-radius: 4px; margin-left: 6px;
+    text-transform: uppercase; letter-spacing: 0.5px; vertical-align: middle;
 }
 
-/* Navbar ala Instagram */
-nav, header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background-color: #ffffff;
-    border-bottom: 1px solid #dbdbdb;
-    height: 60px;
-    padding: 0 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
+.container { max-width: 640px; margin: 24px auto; padding: 0 16px; }
+.card { background: #ffffff; border-radius: 10px; padding: 16px; margin-bottom: 20px; border: 1px solid #e5e7eb; }
 
-.nav-inner {
-    width: 100%;
-    max-width: 935px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
+input, textarea { width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #d1d5db; border-radius: 6px; font-size: 14px; }
+.btn-primary { background: #2563eb; color: white; border: none; padding: 9px 16px; border-radius: 6px; cursor: pointer; font-weight: 600; }
+.btn-primary:hover { background: #1d4ed8; }
+.btn-outline { background: transparent; border: 1px solid #d1d5db; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 13px; }
+.btn-outline:hover { background: #f3f4f6; }
 
-.brand, nav h1, header h1 {
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-    color: #262626;
-    cursor: pointer;
-}
+.post-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.media-wrapper img, .media-wrapper video { width: 100%; max-height: 480px; object-fit: contain; background: #000; border-radius: 8px; }
+.post-desc { margin: 10px 0; font-size: 14px; line-height: 1.5; }
+.post-actions { display: flex; gap: 8px; flex-wrap: wrap; padding-top: 10px; border-top: 1px solid #f3f4f6; }
 
-.nav-actions {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 14px;
-}
+.comments-box { margin-top: 12px; background: #f9fafb; padding: 10px; border-radius: 6px; }
+.comment-item { font-size: 13px; margin-bottom: 6px; }
+.comment-form { display: flex; gap: 6px; margin-top: 8px; }
+.comment-form input { margin: 0; padding: 6px 10px; }
 
-/* Container Feed Utama (Lebar standar IG: 470px) */
-main, .container {
-    max-width: 470px;
-    margin: 24px auto 60px;
-    padding: 0 12px;
-}
-
-/* Kotak Unggah */
-.upload-box, #upload-section {
-    background: #ffffff;
-    border: 1px solid #dbdbdb;
-    border-radius: 8px;
-    padding: 16px;
-    margin-bottom: 24px;
-}
-
-.upload-box h2, #upload-section h2 {
-    font-size: 15px;
-    font-weight: 600;
-    margin-bottom: 12px;
-    color: #262626;
-}
-
-.upload-box input[type="file"],
-#upload-section input[type="file"] {
-    width: 100%;
-    font-size: 13px;
-    padding: 8px;
-    border: 1px dashed #dbdbdb;
-    border-radius: 6px;
-    background: #fafafa;
-    margin-bottom: 10px;
-    cursor: pointer;
-}
-
-.upload-box textarea,
-#upload-section textarea {
-    width: 100%;
-    border: 1px solid #dbdbdb;
-    border-radius: 6px;
-    padding: 10px 12px;
-    font-family: inherit;
-    font-size: 14px;
-    resize: none;
-    min-height: 68px;
-    margin-bottom: 12px;
-    background: #fafafa;
-}
-
-.upload-box textarea:focus,
-#upload-section textarea:focus {
-    outline: none;
-    background: #ffffff;
-    border-color: #a8a8a8;
-}
-
-/* Tombol Utama Biru IG */
-.btn-primary, button[type="submit"] {
-    background-color: #0095f6;
-    color: #ffffff;
-    border: none;
-    border-radius: 8px;
-    padding: 8px 16px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.15s ease;
-}
-
-.btn-primary:hover, button[type="submit"]:hover {
-    background-color: #1877f2;
-}
-
-.btn-secondary {
-    background-color: #efefef;
-    color: #262626;
-    border: none;
-    border-radius: 8px;
-    padding: 7px 14px;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-.btn-secondary:hover {
-    background-color: #dbdbdb;
-}
-
-/* Kartu Postingan ala Instagram */
-.post-card {
-    background: #ffffff;
-    border: 1px solid #dbdbdb;
-    border-radius: 8px;
-    margin-bottom: 24px;
-    overflow: hidden;
-}
-
-/* Header Postingan (Avatar + Username + Badge) */
-.post-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 14px;
-}
-
-.post-user {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.avatar-circle {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-    color: #ffffff;
-    font-size: 13px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-transform: uppercase;
-    flex-shrink: 0;
-}
-
-.username-text {
-    font-size: 14px;
-    font-weight: 600;
-    color: #262626;
-}
-
-/* Badge Developer (Centang / Label Rapi) */
-.dev-badge {
-    display: inline-flex;
-    align-items: center;
-    background-color: #0095f6;
-    color: #ffffff;
-    font-size: 10px;
-    font-weight: 700;
-    padding: 2px 6px;
-    border-radius: 4px;
-    letter-spacing: 0.3px;
-    text-transform: uppercase;
-    margin-left: 4px;
-}
-
-/* Media Full-Bleed tanpa margin/border-radius dalam */
-.post-media {
-    width: 100%;
-    background-color: #000000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.post-media img,
-.post-media video {
-    width: 100%;
-    max-height: 585px;
-    object-fit: contain;
-    display: block;
-}
-
-/* Baris Ikon Aksi (Like, Comment, Share, Download) */
-.post-actions {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 14px 6px;
-}
-
-.action-left {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-}
-
-.icon-btn {
-    background: none;
-    border: none;
-    padding: 2px;
-    cursor: pointer;
-    color: #262626;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.1s ease, opacity 0.15s ease;
-}
-
-.icon-btn:hover {
-    opacity: 0.65;
-}
-
-.icon-btn:active {
-    transform: scale(0.9);
-}
-
-.icon-btn.liked svg {
-    fill: #ed4956;
-    stroke: #ed4956;
-}
-
-/* Jumlah Like & Caption */
-.post-likes {
-    padding: 0 14px;
-    font-size: 14px;
-    font-weight: 600;
-    color: #262626;
-    margin-bottom: 6px;
-}
-
-.post-caption {
-    padding: 0 14px;
-    font-size: 14px;
-    color: #262626;
-    margin-bottom: 8px;
-    word-wrap: break-word;
-}
-
-.post-caption strong {
-    font-weight: 600;
-    margin-right: 4px;
-}
-
-/* Area Komentar ala Instagram */
-.comments-list {
-    padding: 0 14px 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.comment-item {
-    font-size: 13.5px;
-    color: #262626;
-    line-height: 1.35;
-}
-
-.comment-item strong {
-    font-weight: 600;
-}
-
-.comment-form {
-    display: flex;
-    align-items: center;
-    border-top: 1px solid #efefef;
-    padding: 10px 14px;
-    gap: 8px;
-}
-
-.comment-form input {
-    flex: 1;
-    border: none;
-    font-size: 14px;
-    font-family: inherit;
-    color: #262626;
-    background: transparent;
-}
-
-.comment-form input:focus {
-    outline: none;
-}
-
-.comment-form button {
-    background: none;
-    border: none;
-    color: #0095f6;
-    font-weight: 600;
-    font-size: 14px;
-    cursor: pointer;
-    padding: 0;
-}
-
-.comment-form button:hover {
-    color: #00376b;
-}
-
-/* Modal Login / Daftar */
-.modal {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.65);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 999;
-    padding: 16px;
-}
-
-.modal.hidden {
-    display: none;
-}
-
-.modal-content {
-    background: #ffffff;
-    border-radius: 12px;
-    width: 100%;
-    max-width: 350px;
-    padding: 28px 24px;
-    position: relative;
-    text-align: center;
-}
-
-.modal-content h2 {
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 18px;
-}
-
-.modal-content input {
-    width: 100%;
-    padding: 10px 12px;
-    margin-bottom: 10px;
-    border: 1px solid #dbdbdb;
-    border-radius: 6px;
-    background: #fafafa;
-    font-size: 13.5px;
-}
-
-.modal-content input:focus {
-    outline: none;
-    border-color: #a8a8a8;
-    background: #ffffff;
-}
-
-.modal-content button[type="submit"] {
-    width: 100%;
-    margin-top: 6px;
-    padding: 9px;
-}
-
-/* Responsif Layar HP */
-@media (max-width: 500px) {
-    main, .container {
-        padding: 0;
-        margin-top: 0;
-    }
-
-    .post-card, .upload-box, #upload-section {
-        border-radius: 0;
-        border-left: none;
-        border-right: none;
-        margin-bottom: 12px;
-    }
-}
+.modal { position: fixed; inset: 0; background: rgba(0,0,0,0.5); display: flex; justify-content: center; align-items: center; z-index: 50; }
+.modal-content { background: white; padding: 24px; border-radius: 10px; width: 90%; max-width: 380px; position: relative; }
+.close { position: absolute; right: 16px; top: 12px; font-size: 22px; cursor: pointer; }
+.switch-auth { margin-top: 12px; font-size: 13px; text-align: center; }
